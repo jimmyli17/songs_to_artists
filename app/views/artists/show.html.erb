@@ -1,0 +1,32 @@
+<h1>Artist #<%= @artist.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @artist.name %></p>
+</div>
+<div>
+  <strong>Image url</strong>:<br />
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="<%= @artist.image_url %>" alt="<%= @artist.name %>">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="details">
+  <p>Songs:</p>
+  <ul>
+    <% @songs.each do |song| %>
+    <li>
+      <p><%=song.name%></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<div class="details">
+  <a href="/artists/<%= @artist.id %>/edit">Edit</a> |
+  <a href="/artists/<%= @artist.id %>/destroy">Destroy</a>
+</div>
